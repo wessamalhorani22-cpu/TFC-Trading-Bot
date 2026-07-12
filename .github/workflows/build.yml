@@ -16,8 +16,8 @@ jobs:
         run: pip3 install --user --upgrade buildozer cython
 
       - name: Build APK
-        # استخدام yes "y" مع buildozer سيوافق تلقائياً على أي رخصة تظهر
-        run: yes "y" | buildozer -v android debug
+        # لقد حذفنا "yes" تماماً لنرى السبب الحقيقي للفشل
+        run: buildozer -v android debug
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
