@@ -16,8 +16,8 @@ jobs:
         run: pip3 install --user --upgrade buildozer cython
 
       - name: Build APK
-        # استخدام yes "y" يجعل النظام يضغط "y" تلقائياً لأي سؤال يظهر أثناء البناء
-        run: yes "y" | buildozer android debug
+        # أضفنا -v لرؤية السبب الحقيقي للفشل
+        run: buildozer -v android debug
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
