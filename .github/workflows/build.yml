@@ -11,11 +11,9 @@ jobs:
       uses: ArtemSBulgakov/buildozer-action@v1
       with:
         command: buildozer android debug
-      env:
-        
+
     - name: Upload APK
       uses: actions/upload-artifact@v3
       with:
         name: package
         path: bin/*.apk
-        
